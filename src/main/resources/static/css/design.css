@@ -4,15 +4,24 @@
   width: 40%;
   border-radius: 5px;
   margin-bottom: 10px;
-  display: flex;
 }
 
 .crd:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.bg-set {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 5px;
+  display: block;
+}
+
 .im {
   border-radius: 5px 5px 0 0;
+  justify-content: center;
+  margin: auto;
+  display: block;
+  align-items: center;
 }
 
 .con {

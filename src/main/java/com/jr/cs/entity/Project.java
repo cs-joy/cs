@@ -24,6 +24,8 @@ public class Project {
     @Column(columnDefinition = "MEDIUMBLOB", length = 1000)
     private String p_logo;
 
+    private String p_logo_url;
+
     public Project() {
     }
 
@@ -32,6 +34,14 @@ public class Project {
         this.p_description = p_description;
         this.p_website_url = p_website_url;
         this.p_logo = p_logo;
+    }
+
+    public Project(String p_name, String p_description, String p_website_url, String p_logo, String p_logo_url) {
+        this.p_name = p_name;
+        this.p_description = p_description;
+        this.p_website_url = p_website_url;
+        this.p_logo = p_logo;
+        this.p_logo_url = p_logo_url;
     }
 
     public Long getId() {
@@ -72,5 +82,13 @@ public class Project {
 
     public void setP_logo(String p_logo) {
         this.p_logo = p_logo;
+    }
+
+    public String getP_logo_url() {
+        return p_logo_url;
+    }
+
+    public void setP_logo_url(String p_logo_url) {
+        this.p_logo_url = p_logo_url;
     }
 }

@@ -13,12 +13,23 @@
 
 <div class="container">
 
+  <div>
+    <button>
+      <a th:href="@{/}">Home</a>
+    </button>
+  </div>
+
   <div class="crd" th:each="pr: ${project}">
-    <img class="im" alt="Avatar" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:50px; border-radius: 50%; height: 50px" />
+    <div class="bg-set"></div>
+    <img class="im" alt="Avatar" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:50%" />
     <div class="con">
       <h4 th:text="${pr.p_name}"></h4>
       <p th:text="${pr.p_website_url}"></p>
+      <button>
+        <a th:href="${pr.p_website_url}">visit</a>
+      </button>
     </div>
+    <img class="im" alt="test" th:src="${pr.p_logo_url}" style="width: 50%" />
   </div>
 
 </div>
