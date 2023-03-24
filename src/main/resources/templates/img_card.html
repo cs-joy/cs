@@ -12,13 +12,15 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-4" th:each="pr: ${project}">
-      <div class="card">
-        <img th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 50px; height: 50px;" />
+    <div class="col-sm-3" th:each="pr: ${project}">
+      <div class="card mycard" style="margin-bottom: 10px;">
+        <img class="rounder" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 90px; height: 97px;" />
         <div class="card-body">
-          <h3 class="card-title" th:text="${pr.p_name}"></h3>
-          <p class="card-text" th:text="${pr.p_description}"></p>
-          <img th:src="${pr.p_logo_url}" style="height:100px; width: 100px" alt="test" />
+          <h5 class="card-title" th:text="${pr.p_name}"></h5>
+          <a th:href="${pr.p_website_url}">Website</a>
+          <a th:href="@{/more}" style="float: right">More</a>
+          <!-- <p class="card-text" th:text="${pr.p_description}"></p> -->
+          <!-- <img th:src="${pr.p_logo_url}" style="height:100px; width: 100px" alt="test" /> -->
         </div>
       </div>
     </div>
