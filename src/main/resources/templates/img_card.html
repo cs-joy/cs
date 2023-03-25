@@ -11,12 +11,18 @@
 <body>
 <div class="container">
 
+  <div class="dash">
+    <a th:href="@{/}">Home</a>
+  </div>
+
   <div class="row">
     <div class="col-sm-3" th:each="pr: ${project}">
       <div class="card mycard" style="margin-bottom: 10px;">
-        <img class="rounder" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 90px; height: 97px;" />
+        <img class="rounder" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 90px; height: 97px; border-radius: 50%;" />
         <div class="card-body">
-          <h5 class="card-title" th:text="${pr.p_name}"></h5>
+          <div>
+            <h5 class="card-title" th:text="${pr.p_name}"></h5>
+          </div>
           <a th:href="${pr.p_website_url}">Website</a>
           <a th:href="@{/more}" style="float: right">More</a>
           <!-- <p class="card-text" th:text="${pr.p_description}"></p> -->
