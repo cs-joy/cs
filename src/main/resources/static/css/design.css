@@ -27,11 +27,24 @@
 .con {
   padding: 2px 16px;
 }
-
+/**************************************** */
 .mycard {
-  background-color: rgba(8, 8, 8, 0.055);
+  background-color: rgba(128, 255, 255, 0.055);
   border-color: none;
 
+}
+
+.in-style {
+  display:inline-block;
+}
+
+.p-tag {
+    display:inline-block;
+    margin-left:10px;
+}
+
+.p-name {
+    float:left;
 }
 
 .mycard:hover {

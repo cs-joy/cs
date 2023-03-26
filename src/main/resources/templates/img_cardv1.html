@@ -21,26 +21,20 @@
       <div class="card mycard" style="margin-bottom: 10px;">
         <img class="rounder" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 90px; height: 97px; border-radius: 50%;" />
         <div class="card-body">
-          <div class="in-style">
-            <h4 class="card-title p-name" th:text="${pr.p_name}"></h4>
-            <h5 class="p-tag"><span class="badge badge-light">ETH</span></h5>
-          </div>
           <div>
-            <a th:href="${pr.p_website_url}">
-              <i class="bi bi-globe2"></i>
-            </a>
-            <a th:href="@{/}">
-              <i class="bi bi-github"></i>
-            </a>
-            <a th:href="@{/}">
-              <i class="bi bi-search"></i>
-            </a>
-            <a th:href="@{/}">
-              <i class="bi bi-chat-fill"></i>
-            </a>
-            <div style="float: right">
-                <a th:href="@{/more}"><i class="bi bi-three-dots"></i></a>
-            </div>
+            <h5 class="card-title" th:text="${pr.p_name}"></h5>
+          </div>
+          <i class="bi bi-globe2"></i>
+          <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+          </svg>-->
+          <a th:href="${pr.p_website_url}">Website</a>
+          <i class="bi bi-github"></i>
+          <i class="bi bi-search"></i>
+          <i class="bi bi-chat-fill"></i>
+          <div style="float: right">
+            <i class="bi bi-three-dots"></i>
+            <a th:href="@{/more}">More</a>
           </div>
           <!-- <p class="card-text" th:text="${pr.p_description}"></p> -->
           <!-- <img th:src="${pr.p_logo_url}" style="height:100px; width: 100px" alt="test" /> -->
@@ -48,20 +42,20 @@
       </div>
     </div>
   </div>
-  <!--
-    <div class="card" th:each="pr: ${project}">
-      <div class="bg-set"></div>
-      <img class="im" alt="Avatar" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:50%" />
-      <div class="con">
-        <h4 th:text="${pr.p_name}"></h4>
-        <p th:text="${pr.p_website_url}"></p>
-        <button>
-          <a th:href="${pr.p_website_url}">visit</a>
-        </button>
-      </div>
-      <img class="im" alt="test" th:src="${pr.p_logo_url}" style="width: 50%" />
+<!--
+  <div class="card" th:each="pr: ${project}">
+    <div class="bg-set"></div>
+    <img class="im" alt="Avatar" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:50%" />
+    <div class="con">
+      <h4 th:text="${pr.p_name}"></h4>
+      <p th:text="${pr.p_website_url}"></p>
+      <button>
+        <a th:href="${pr.p_website_url}">visit</a>
+      </button>
     </div>
-    -->
+    <img class="im" alt="test" th:src="${pr.p_logo_url}" style="width: 50%" />
+  </div>
+  -->
 
 </div>
 
