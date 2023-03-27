@@ -22,8 +22,30 @@
         <img th:src="${pr.p_logo_url}" style="height:100px; width: 100%" alt="test" />
         <div class="card-body">
           <div class="in-style">
-            <h4 class="card-title p-name" th:text="${pr.p_name}"></h4>
-            <h5 class="p-tag"><span class="badge badge-light">ETH</span></h5>
+
+
+
+
+
+            <ul class="ul-design">
+              <li>
+                <img class="img-m" alt="no img" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 25px; height: 25px; border-radius: 50%;" />
+              </li>
+              <li><h4 class="card-title p-name" th:text="${pr.p_name}"></h4></li>
+              <li><h5 class="p-tag"><span class="badge badge-light">ETH</span></h5></li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
 
           <div>

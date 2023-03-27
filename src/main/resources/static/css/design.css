@@ -59,3 +59,17 @@
   margin: 5px 8px 3px 7px;
   padding: 5px 12px;
 }
+
+.ul-design {
+    list-style-type: none;
+    display: inline;
+    margin-left: -30px;
+}
+
+.ul-design > li {
+  display: inline-block;
+}
+
+.img-m:hover {
+    background-color: rgba(255, 245, 187, 1);
+}
