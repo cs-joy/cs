@@ -47,6 +47,10 @@
     float:left;
 }
 
+.mycard {
+  box-shadow: 0 4px 8px 0 rgba(121, 255, 73, 0.2), 0 6px 20px 0 rgba(34, 255, 123, 0.19);
+}
+
 .mycard:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

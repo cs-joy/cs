@@ -19,12 +19,13 @@
   <div class="row">
     <div class="col-sm-3" th:each="pr: ${project}">
       <div class="card mycard" style="margin-bottom: 10px;">
-        <img class="rounder" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 90px; height: 97px; border-radius: 50%;" />
+        <img th:src="${pr.p_logo_url}" style="height:100px; width: 100%" alt="test" />
         <div class="card-body">
           <div class="in-style">
             <h4 class="card-title p-name" th:text="${pr.p_name}"></h4>
             <h5 class="p-tag"><span class="badge badge-light">ETH</span></h5>
           </div>
+
           <div>
             <a th:href="${pr.p_website_url}">
               <i class="bi bi-globe2"></i>
@@ -42,6 +43,8 @@
                 <a th:href="@{/more}"><i class="bi bi-three-dots"></i></a>
             </div>
           </div>
+          <!--             <img class="rounder p-tag" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 20px; height: 20px; border-radius: 50%;" />
+ -->
           <!-- <p class="card-text" th:text="${pr.p_description}"></p> -->
           <!-- <img th:src="${pr.p_logo_url}" style="height:100px; width: 100px" alt="test" /> -->
         </div>
