@@ -63,13 +63,13 @@
 .ul-design {
     list-style-type: none;
     display: inline;
-    margin-left: -30px;
+    margin-left: -45px;
 }
 
 .ul-design > li {
   display: inline-block;
 }
 
-.img-m:hover {
-    background-color: rgba(255, 245, 187, 1);
+.p-img {
+    margin-bottom: 16px;
 }

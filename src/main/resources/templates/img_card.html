@@ -18,8 +18,8 @@
 
   <div class="row">
     <div class="col-sm-3" th:each="pr: ${project}">
-      <div class="card mycard" style="margin-bottom: 10px;">
-        <img th:src="${pr.p_logo_url}" style="height:100px; width: 100%" alt="test" />
+      <div class="card mycard" style="margin-bottom: 10px; border-radius: 5%;">
+        <img th:src="${pr.p_logo_url}" style="height:150px; width: 100%; border-radius: 5%;" alt="test" />
         <div class="card-body">
           <div class="in-style">
 
@@ -29,10 +29,10 @@
 
             <ul class="ul-design">
               <li>
-                <img class="img-m" alt="no img" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 25px; height: 25px; border-radius: 50%;" />
+                <img class="p-img" alt="no img" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 28px; height: 28x; border-radius: 50%; margin-top: 10px;" />
               </li>
-              <li><h4 class="card-title p-name" th:text="${pr.p_name}"></h4></li>
-              <li><h5 class="p-tag"><span class="badge badge-light">ETH</span></h5></li>
+              <li><h5 class="card-title p-title" th:text="${pr.p_name}"></h5></li>
+              <li><h5 class=""><span class="badge badge-light">ETH</span></h5></li>
             </ul>
 
 
