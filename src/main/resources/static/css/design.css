@@ -73,3 +73,19 @@
 .p-img {
     margin-bottom: 16px;
 }
+
+.low-sec-design {
+  padding-left: 10px;
+}
+
+
+@media (max-width: 62.5rem) {
+	.p-title {
+	  color: red;
+	}
+
+	.mycard {
+	  width: 12rem;
+	  height: 12rem;
+	}
+}
