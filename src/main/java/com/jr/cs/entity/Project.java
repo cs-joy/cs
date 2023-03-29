@@ -12,6 +12,10 @@ public class Project {
     // project name
     private String p_name;
 
+    // project ticker
+    // ex: BTC
+    private String p_ticker;
+
     // project description
     @Column(length = 1000)
     private String p_description;
@@ -29,15 +33,17 @@ public class Project {
     public Project() {
     }
 
-    public Project(String p_name, String p_description, String p_website_url, String p_logo) {
+    public Project(String p_name, String p_ticker, String p_description, String p_website_url, String p_logo) {
         this.p_name = p_name;
+        this.p_ticker = p_ticker;
         this.p_description = p_description;
         this.p_website_url = p_website_url;
         this.p_logo = p_logo;
     }
 
-    public Project(String p_name, String p_description, String p_website_url, String p_logo, String p_logo_url) {
+    public Project(String p_name, String p_ticker, String p_description, String p_website_url, String p_logo, String p_logo_url) {
         this.p_name = p_name;
+        this.p_ticker = p_ticker;
         this.p_description = p_description;
         this.p_website_url = p_website_url;
         this.p_logo = p_logo;
@@ -58,6 +64,14 @@ public class Project {
 
     public void setP_name(String p_name) {
         this.p_name = p_name;
+    }
+
+    public String getP_ticker() {
+        return p_ticker;
+    }
+
+    public void setP_ticker(String p_ticker) {
+        this.p_ticker = p_ticker;
     }
 
     public String getP_description() {
