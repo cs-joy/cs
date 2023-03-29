@@ -26,7 +26,7 @@
                 <img class="p-img" alt="no img" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 28px; height: 28x; border-radius: 50%; margin-top: 10px;" />
               </li>
               <li><h5 class="card-title p-title" th:text="${pr.p_name}"></h5></li>
-              <li><h5 class=""><span class="badge badge-light">ETH</span></h5></li>
+              <li><h5><span class="badge badge-light" th:text="${pr.p_ticker}"></span></h5></li>
             </ul>
           </div>
           <div>
