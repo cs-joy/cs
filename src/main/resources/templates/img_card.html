@@ -5,10 +5,8 @@
   <title>CS HOME</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" media="all" href="/css/design.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
 </head>
 <body>
 <div class="container">
@@ -18,16 +16,11 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-3 test" th:each="pr: ${project}">
-      <div class="card mycard grid-item" style="width: 16rem; height: 16rem; margin-bottom: 10px; border-radius: 5%;">
-        <img class="card-img-top test-img" th:src="${pr.p_logo_url}" style="height:150px; width: 100%; border-radius: 5%;" alt="test" />
+    <div class="col-sm-6 col-md-4 col-lg-3 col-6" th:each="pr: ${project}">
+      <div class="card mycard" style="height: 14rem; margin-bottom: 18px; border-radius: 5%;" >
+        <img class="card-img-top" th:src="${pr.p_logo_url}" style="height:7rem; width: 100%; border-radius: 5% 5%;" alt="test" />
         <div class="card-body">
           <div class="in-style">
-
-
-
-
-
             <ul class="ul-design">
               <li>
                 <img class="p-img" alt="no img" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width: 28px; height: 28x; border-radius: 50%; margin-top: 10px;" />
@@ -35,20 +28,7 @@
               <li><h5 class="card-title p-title" th:text="${pr.p_name}"></h5></li>
               <li><h5 class=""><span class="badge badge-light">ETH</span></h5></li>
             </ul>
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
-
           <div>
             <a th:href="${pr.p_website_url}">
               <i class="bi bi-globe2"></i>
@@ -66,31 +46,12 @@
                 <a th:href="@{/more}">
                   <i class="bi bi-three-dots"></i>
                 </a>
-
             </div>
           </div>
-          <!--             <img class="rounder p-tag" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="padding-top: 5px; margin: auto; display: block; width: 20px; height: 20px; border-radius: 50%;" />
- -->
-          <!-- <p class="card-text" th:text="${pr.p_description}"></p> -->
-          <!-- <img th:src="${pr.p_logo_url}" style="height:100px; width: 100px" alt="test" /> -->
         </div>
       </div>
     </div>
   </div>
-  <!--
-    <div class="card" th:each="pr: ${project}">
-      <div class="bg-set"></div>
-      <img class="im" alt="Avatar" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:50%" />
-      <div class="con">
-        <h4 th:text="${pr.p_name}"></h4>
-        <p th:text="${pr.p_website_url}"></p>
-        <button>
-          <a th:href="${pr.p_website_url}">visit</a>
-        </button>
-      </div>
-      <img class="im" alt="test" th:src="${pr.p_logo_url}" style="width: 50%" />
-    </div>
-    -->
 
 </div>
 
