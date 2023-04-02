@@ -1,11 +1,11 @@
 
 @media screen and (max-width: 768px) {
   .cls {
-    width: 40px;
+    background-color: #f743;
   }
 
   .cls2 {
-    width: 420px;
+        background-color: #f7d3;
   }
 }
 
