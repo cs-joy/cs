@@ -1,0 +1,21 @@
+
+@media screen and (max-width: 768px) {
+  .cls {
+    width: 40px;
+  }
+
+  .cls2 {
+    width: 420px;
+  }
+}
+
+#square {
+  width: 20em;
+  height: 20em;
+  border: 2px inset gray;
+  margin-bottom: 1em;
+}
+
+button {
+  padding: .5em 2em;
+}

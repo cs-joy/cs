@@ -18,6 +18,12 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    // test
+    @GetMapping("/details")
+    public String testDetails() {
+        return "details";
+    }
+
     @GetMapping("/")
     public String testFirst() {
         return "home";
