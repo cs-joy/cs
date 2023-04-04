@@ -19,3 +19,10 @@ function clearDemo (button) {
 }
 
 clickMe.onclick = doDemo; //Onclick call. Pass no arguments.​​​​​
+
+
+let counter = 1;
+setInterval(() => {
+  document.getElementById("tv_chart").innerText = counter;
+  counter++;
+}, 1000);
