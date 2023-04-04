@@ -19,3 +19,11 @@
 button {
   padding: .5em 2em;
 }
+
+
+/* tv_chart design*/
+#tv_chart {
+  position: absolute;
+  width: 964px;
+  height: 575px;
+}
