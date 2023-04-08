@@ -7,7 +7,7 @@ window.onload = function() {
  const {log, error} = console;
 
  const getData = async () => {
-   const resp = await fetch("http://localhost:3232/LTCUSDT/1m");
+   const resp = await fetch("http://localhost:3232/DASHUSDT/1m");
    const data = await resp.json();
 
    //log(data);

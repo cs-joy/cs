@@ -24,6 +24,13 @@ public class ProjectController {
         return "details";
     }
 
+    // test 2
+    @GetMapping("/project/edit/{id}")
+    public String ePrDetails(@PathVariable Long id, Model model) {
+        model.addAttribute("project", projectService.getProjectById(id));
+        return "details";
+    }
+
     @GetMapping("/")
     public String testFirst() {
         return "home";

@@ -21,18 +21,24 @@
 </head>
 <body>
 
-<div class="container" style="margin-top: 105px;">
+<div class="container" style="margin-top: 105px;" th:each="pr:${project}" th:object="${project}">
 
   <div class="disp">
     <div class="row">
-      <div class="col-md-auto col-sm-12">
+      <div class="col-md-auto col-sm-12" style="font-size: 15px">
+        <h3 th:text="${pr.p_name}"></h3>
         <h2>Info</h2>
 
-          <li style="list-style-type:none; color: #dd4814">
-            <i class="bi bi-search-heart-fill" style="margin-right: 3px;"></i>
-            <a href="#" style="color: #dd4814;">DASH masternode </a>
+          <li style="list-style-type:none; color: #dd4814; display: flex;">
+            <i class="bi bi-search-heart-fill" ></i>
+            <a href="#" style="color: #dd4814;">
+                <ul style="list-style-type: none; display: flex; margin-left: -35px;">
+                  <li th:text="${pr.p_name}" style="margin-right: 4px"></li>
+                  <li>cs explorer</li>
+                </ul>
+            </a>
           </li>
-         <br />
+
         <div class="li-color" style="color: #dd4814; list-style-type: none; display: inline-block;">
           <li>
             <i class="bi bi-coin" style="margin-right: 3px;"></i>
@@ -44,7 +50,7 @@
           </li>
           <li>
             <i class="bi bi-globe2" style="margin-right: 3px;"></i>
-            <a href="#" style="color: #dd4814;">Website</a>
+            <a th:href="${pr.p_website_url}" style="color: #dd4814;">Website</a>
           </li>
         </div>
         <br>
@@ -113,7 +119,6 @@
             <a href="#" style="color: #dd4814">CREX24</a>
           </li>
         </div>
-
       </div>
 
       <div class="col-md-10 col-sm-1">
@@ -163,8 +168,11 @@
             </div>
           </div>
         </div>
-        <div class="price-stats">
-          <h3>DASH PRICE STATS</h3>
+        <div class="price-stats ">
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>PRICE STATS</h3>
+          </div>
           <table class="table table-hover table-striped">
             <thead>
             <tr>
@@ -190,7 +198,10 @@
           </table>
         </div>
         <div class="masternode-stats">
-          <h3>DASH MASTERNODE STATS</h3>
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>MASTERNODE STATS</h3>
+          </div>
           <p>based on actual data over the past 24 hours</p>
 
           <table class="table table-striped">
@@ -234,8 +245,22 @@
             </tbody>
           </table>
         </div>
+
+        <br />
+        <div class="chart">
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>Price Charts</h3>
+          </div>
+          <div class="tv_c" id="tv_chart"></div>
+        </div>
+
+        <br />
         <div class="blockchain-stats">
-          <h3>DASH BLOCKCHAIN STATS</h3>
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>BLOCKCHAIN STATS</h3>
+          </div>
           <p>based on actual data over the past 24 hours</p>
           <table class="table table-striped">
             <tr>
@@ -253,7 +278,11 @@
           </table>
         </div>
         <div class="wallet-info">
-          <h3>CS DASH WALLET INFO</h3>
+          <div style="display: flex;">
+            <h3 style="margin-right: 8px">CS</h3>
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>WALLET INFO</h3>
+          </div>
           <p>based on actual data over the past 24 hours</p>
           <table class="table table-striped">
             <tr>
@@ -270,6 +299,7 @@
             </tr>
           </table>
         </div>
+
         <br />
         <div class="block-update-info">
           <p>Last price and masternodes count update: 3m 35s ago</p>
@@ -277,15 +307,19 @@
           <br />
           <p>ROI is calculated based on actual rewards for each block for the last 24 hours.</p>
           <br />
-          <p style="font-weight: bold">CS platform is a masternode coin monitoring and stats service. MNO does not research or recommend any coin. Do your own research and invest at your own risk.</p>
+          <p style="font-weight: bold">CS platform is a marketing cryptocurrency monitoring and stats service. CS Team does not research or recommend any coin. Do your own research and invest at your own risk.</p>
           <br />
           <p>ROI changes often and is not the most important factor. Please consider <span style="font-weight: bold">Dev Team - Community - PURPOSE/Platform - Liquidity - Wallet</span> when making masternode purchases.</p>
         </div>
+<!--        <div class="chart">-->
+<!--          <h3>DASH Price Charts</h3>-->
+<!--          <div id="tv_chart"></div>-->
+<!--        </div>-->
       </div>
     </div>
   </div>
 
-  <button type="button" th:onclick="showAlert()">Show Alert</button>
+<!--  <button type="button" th:onclick="showAlert()">Show Alert</button>-->
 
 
   <!--
@@ -338,15 +372,15 @@
   </div>
   -->
 
-  <div id="vid"></div>
-  <h1>JavaScript sample</h1>
-  <div id="square"></div>
-  <button type="button" id="clickMe">Click Me</button>
+<!--  <div id="vid"></div>-->
+<!--  <h1>JavaScript sample</h1>-->
+<!--  <div id="square"></div>-->
+<!--  <button type="button" id="clickMe">Click Me</button>-->
 
 
-  <div>
-    <div id="tv_chart"></div>
-  </div>
+<!--  <div>-->
+<!--    <div id="tv_chart"></div>-->
+<!--  </div>-->
 </div>
 <script src="https://unpkg.com/lightweight-charts@3.4.0/dist/lightweight-charts.standalone.production.js"></script>
 <script type="text/javascript" th:src="@{/js/action.js}"></script>

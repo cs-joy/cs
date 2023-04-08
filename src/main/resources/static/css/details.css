@@ -23,7 +23,18 @@ button {
 
 /* tv_chart design*/
 #tv_chart {
-  position: absolute;
+  position: relative;
   width: 964px;
-  height: 575px;
+  height: 475px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .tv_c {
+      position: relative;
+      width: 422px;
+      height: 300px;
+  }
 }
