@@ -26,8 +26,13 @@
   <div class="disp">
     <div class="row">
       <div class="col-md-auto col-sm-12" style="font-size: 15px">
-        <h3 th:text="${pr.p_name}"></h3>
-        <h2>Info</h2>
+        <div class="project-title" style="display: flex">
+          <h4 th:text="${pr.p_name}" style="margin-right: 3px"></h4>
+          <h4>(</h4>
+          <h4 th:text="${pr.p_ticker}" id="pr_ticker"></h4>
+          <h4>)</h4>
+        </div>
+        <h4>Info</h4>
 
           <li style="list-style-type:none; color: #dd4814; display: flex;">
             <i class="bi bi-search-heart-fill" ></i>

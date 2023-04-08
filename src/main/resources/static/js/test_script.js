@@ -6,8 +6,14 @@ window.onload = function() {
  // tv_chart design test
  const {log, error} = console;
 
+ // get project ticker
+ const project_ticker_element = document.getElementById("pr_ticker");
+ const project_ticker = project_ticker_element.textContent;
+
+ const f_url = `http://localhost:3232/${project_ticker}USDT/1m`;
+
  const getData = async () => {
-   const resp = await fetch("http://localhost:3232/DASHUSDT/1m");
+   const resp = await fetch(f_url);
    const data = await resp.json();
 
    //log(data);
