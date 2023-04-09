@@ -1,3 +1,7 @@
+body {
+  font-size: 15px;
+}
+
 
 @media screen and (max-width: 768px) {
   .cls {

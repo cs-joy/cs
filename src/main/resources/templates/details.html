@@ -25,7 +25,7 @@
 
   <div class="disp">
     <div class="row">
-      <div class="col-md-auto col-sm-12" style="font-size: 15px">
+      <div class="col-md-auto col-sm-12" style="font-size: 15px; max-width: 500px; margin-right: 15px;">
         <div class="project-title" style="display: flex">
           <h4 th:text="${pr.p_name}" style="margin-right: 3px"></h4>
           <h4>(</h4>
@@ -126,11 +126,11 @@
         </div>
       </div>
 
-      <div class="col-md-10 col-sm-1">
+      <div class="col-md-10 col-sm-1" style="max-width: 900px">
         <div class="row">
           <div class="col-lg-3">
             <div class="card mb-3"
-                 style="box-shadow: 0 4px 8px 0 rgba(240, 173, 78, 0.07), 0 6px 20px 0 rgba(240, 173, 78, 0.07); border: 1px solid rgba(240, 173, 78, .2)">
+                 style="box-shadow: 0 4px 8px 0 rgba(240, 173, 78, 0.07), 0 6px 20px 0 rgba(240, 173, 78, 0.07); border: 1px solid rgba(240, 173, 78, .2);">
               <div class="card-header alert-warning" style="color: rgba(240, 173, 78, 1)">Daily income</div>
               <div class="card-body">
                 <p class="card-text">content.</p>
@@ -189,15 +189,15 @@
             </thead>
             <tbody>
             <tr>
-              <td>$57.288119</td>
-              <td>$64,400,504.00</td>
-              <td>$642,691,603.00</td>
-              <td style="color: red;">-0.98% ▼</td>
+              <td id="price_usd"></td>
+              <td id="volume_usd"></td>
+              <td id="marketcap_usd"></td>
+              <td id="percent_change"></td>
             </tr>
             <tr class="table-light">
-              <td>0.00204243 BTC</td>
-              <td>2,296.00 BTC</td>
-              <td colspan="2">22,913.00 BTC</td>
+              <td id="price_btc"></td>
+              <td id="volume_btc"></td>
+              <td id="marketcap_btc" colspan="2">22,913.00 BTC</td>
             </tr>
             </tbody>
           </table>
@@ -316,10 +316,6 @@
           <br />
           <p>ROI changes often and is not the most important factor. Please consider <span style="font-weight: bold">Dev Team - Community - PURPOSE/Platform - Liquidity - Wallet</span> when making masternode purchases.</p>
         </div>
-<!--        <div class="chart">-->
-<!--          <h3>DASH Price Charts</h3>-->
-<!--          <div id="tv_chart"></div>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
@@ -382,10 +378,6 @@
 <!--  <div id="square"></div>-->
 <!--  <button type="button" id="clickMe">Click Me</button>-->
 
-
-<!--  <div>-->
-<!--    <div id="tv_chart"></div>-->
-<!--  </div>-->
 </div>
 <script src="https://unpkg.com/lightweight-charts@3.4.0/dist/lightweight-charts.standalone.production.js"></script>
 <script type="text/javascript" th:src="@{/js/action.js}"></script>

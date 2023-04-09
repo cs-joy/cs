@@ -10,7 +10,10 @@ window.onload = function() {
  const project_ticker_element = document.getElementById("pr_ticker");
  const project_ticker = project_ticker_element.textContent;
 
- const f_url = `http://localhost:3232/${project_ticker}USDT/1m`;
+const f_url = `http://localhost:3232/${project_ticker}USDT/1m`;
+
+const currency = "USD";
+const cmc_url = `http://localhost:3232/test/${project_ticker}/${currency}`;
 
  const getData = async () => {
    const resp = await fetch(f_url);
@@ -19,6 +22,42 @@ window.onload = function() {
    //log(data);
    return data;
  };
+
+// usd
+  fetch(cmc_url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById("price_usd").innerHTML = "$"+data.price;
+      document.getElementById("volume_usd").innerHTML = "$"+data.volume;
+      document.getElementById("marketcap_usd").innerHTML = "$"+data.marketcap;
+      if (data.percent_change >= 0) {
+        document.getElementById("percent_change").style.color = "green";
+        document.getElementById("percent_change").innerHTML = data.percent_change+"% ▲";
+      } else {
+        document.getElementById("percent_change").style.color = "red";
+        document.getElementById("percent_change").innerHTML = data.percent_change+"% ▼";
+      }
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+// btc
+const b_currency = "BTC";
+const c_cmc_url = `http://localhost:3232/test/${project_ticker}/${b_currency}`;
+  fetch(c_cmc_url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById("price_btc").innerHTML = data.price + " BTC";
+      document.getElementById("volume_btc").innerHTML = data.volume + " BTC";
+      document.getElementById("marketcap_btc").innerHTML = data.marketcap + " BTC";
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
 
  //getData();
 
