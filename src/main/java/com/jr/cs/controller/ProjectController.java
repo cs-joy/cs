@@ -2,19 +2,16 @@ package com.jr.cs.controller;
 
 import com.jr.cs.entity.Project;
 import com.jr.cs.service.ProjectService;
-import org.python.core.PyFunction;
-import org.python.core.PyObject;
+import org.python.core.*;
 import org.python.util.PythonInterpreter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Base64;
 
 @Controller
@@ -24,21 +21,28 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    // chart
+    @GetMapping("/check-chart")
+    public String checkChart() {
+        return "cmc_chart";
+    }
+
+
     //test
     @GetMapping("/message")
     public String testPython(Model model) {
         PythonInterpreter interpreter = new PythonInterpreter();
         interpreter.execfile("src/main/resources/static/python/app.py");
 
-        PyFunction func = interpreter.get("generate_text", PyFunction.class);
-        PyObject pyobj = func.__call__();
-        String msg = pyobj.toString();
-        System.out.println(msg);
-        model.addAttribute("mydata", msg);
+        PyObject testNumpyFunc = interpreter.get("generate_text");
+        PyObject po = testNumpyFunc.__call__();
+
+        System.out.println(po.toString());
+        model.addAttribute("mydata", po.toString());
         return "python";
     }
 
-    // test 1
+    // test running
     @GetMapping("/details")
     public String testDetails() {
         return "details";
