@@ -1,39 +1,28 @@
-const toggleButton = document.getElementById("toggle-button");
-const hiddenText = document.getElementById("hidden-text");
+const project_Type = document.getElementById("project");
+const tokenContent = document.getElementById("token-content");
+const projectCategory = document.getElementById("project-category");
 
-toggleButton.addEventListener("click", function() {
-  if (hiddenText.style.display === "none") {
-    hiddenText.style.display = "block";
-    toggleButton.innerText = "Coin";
-  } else {
-    hiddenText.style.display = "none";
-    toggleButton.innerText = "Token";
-  }
-});
+project_Type.style.display = "none";
+tokenContent.style.display = "none";
+projectCategory.style.display = "none";
 
-//////////////////////////////////////////////////////////
-const dbText = document.getElementById("db-text");
-const t_content = document.getElementById("t_content");
+const txt = project_Type.innerText;
 
-const db_text_pos_or_mn = document.getElementById("db-text-pos-or-mn");
 
-const coin_mn_content = document.getElementById("coin_mn_content");
-const coin_pos_content = document.getElementById("coin_pos_content");
+const posParagraph = document.getElementById("my-paragraph-pos");
+const mnParagraph = document.getElementById("my-paragraph-mn");
 
-if (dbText.innerText == "token") {
-  console.log("true, token");
-  dbText.style.display = "none";
-} else {
-  dbText.style.display = "none";
-  console.log("false, token");
-  t_content.style.display = "none";
+posParagraph.style.display = "none";
+mnParagraph.style.display = "none";
 
-  if (db_text_pos_or_mn.innerText == "cpos") {
-    //db_text_pos.style.display = "none";
-    coin_mn_content.style.display = "none";
-    console.log(coin_pos_content.innerText);
-  } else {
-    coin_pos_content.style.display = "none";
-    console.log(coin_mn_content.innerText);
+const projectCategoryText = projectCategory.innerText;
+
+if (txt.toLowerCase() == "token") {
+  tokenContent.style.display = "block";
+} else if (txt.toLowerCase() == "coin") {
+  if (projectCategoryText.toLowerCase() == "pos") {
+    posParagraph.style.display = "block";
+  } else if (projectCategoryText.toLowerCase() == "mn") {
+    mnParagraph.style.display = "block";
   }
 }
