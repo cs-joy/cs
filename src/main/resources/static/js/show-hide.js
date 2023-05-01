@@ -16,9 +16,11 @@ posParagraph.style.display = "none";
 mnParagraph.style.display = "none";
 
 const projectCategoryText = projectCategory.innerText;
-
+const cId = document.getElementById("cid");
+const dgWidth = document.getElementById("dgId");
 if (txt.toLowerCase() == "token") {
   tokenContent.style.display = "block";
+  cId.style.display = "none";
 } else if (txt.toLowerCase() == "coin") {
   if (projectCategoryText.toLowerCase() == "pos") {
     posParagraph.style.display = "block";

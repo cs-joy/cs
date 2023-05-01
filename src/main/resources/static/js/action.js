@@ -19,3 +19,4 @@ function clearDemo (button) {
 }
 
 clickMe.onclick = doDemo; //Onclick call. Pass no arguments.​​​​​
+

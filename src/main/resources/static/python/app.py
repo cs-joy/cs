@@ -1,4 +1,4 @@
 
 
 def generate_text():
-    return "Hello from Python!"
+    return "Text is comes from Python!"
