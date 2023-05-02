@@ -18,10 +18,10 @@ mnParagraph.style.display = "none";
 const projectCategoryText = projectCategory.innerText;
 const cId = document.getElementById("cid");
 const dgWidth = document.getElementById("dgId");
-if (txt.toLowerCase() == "token") {
+if (txt.toLowerCase() == "token" || txt.toLowerCase() == "erc20" || txt.toLowerCase() == "bep20" || txt.toLowerCase() == "matic" || txt.toLowerCase() == "sol") {
   tokenContent.style.display = "block";
   cId.style.display = "none";
-} else if (txt.toLowerCase() == "coin") {
+} else if (txt.toLowerCase() == "coin" || txt.toLowerCase() == "mn" || txt.toLowerCase() == "pos") {
   if (projectCategoryText.toLowerCase() == "pos") {
     posParagraph.style.display = "block";
   } else if (projectCategoryText.toLowerCase() == "mn") {
