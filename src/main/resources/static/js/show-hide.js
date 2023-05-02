@@ -7,7 +7,7 @@ tokenContent.style.display = "none";
 projectCategory.style.display = "none";
 
 const txt = project_Type.innerText;
-
+console.log(txt);
 
 const posParagraph = document.getElementById("my-paragraph-pos");
 const mnParagraph = document.getElementById("my-paragraph-mn");
