@@ -28,7 +28,11 @@ public class Project {
     @Column(columnDefinition = "MEDIUMBLOB", length = 1000)
     private String p_logo;
 
+    // background-image url
     private String p_logo_url;
+
+    // project category (ex: token or coin)
+    private String p_category;
 
     public Project() {
     }
@@ -43,6 +47,16 @@ public class Project {
 
     public Project(String p_name, String p_ticker, String p_description, String p_website_url, String p_logo, String p_logo_url) {
         this.p_name = p_name;
+        this.p_ticker = p_ticker;
+        this.p_description = p_description;
+        this.p_website_url = p_website_url;
+        this.p_logo = p_logo;
+        this.p_logo_url = p_logo_url;
+    }
+
+    public Project(String p_name, String p_category, String p_ticker, String p_description, String p_website_url, String p_logo, String p_logo_url) {
+        this.p_name = p_name;
+        this.p_category = p_category;
         this.p_ticker = p_ticker;
         this.p_description = p_description;
         this.p_website_url = p_website_url;
@@ -104,5 +118,13 @@ public class Project {
 
     public void setP_logo_url(String p_logo_url) {
         this.p_logo_url = p_logo_url;
+    }
+
+    public String getP_category() {
+        return p_category;
+    }
+
+    public void setP_category(String p_category) {
+        this.p_category = p_category;
     }
 }
