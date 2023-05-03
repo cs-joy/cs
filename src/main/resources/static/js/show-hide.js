@@ -28,3 +28,47 @@ if (txt.toLowerCase() == "token" || txt.toLowerCase() == "erc20" || txt.toLowerC
     mnParagraph.style.display = "block";
   }
 }
+
+const amo = document.getElementById("amo");
+const sym = document.getElementById("sym");
+const con = document.getElementById("con");
+
+const t1 = document.getElementById("txt1");
+const t2 = document.getElementById("txt2");
+
+var tv1 = "";
+var tv2 = "";
+
+function swap() {
+  tv1 = t1.innerText;
+  tv2 = t2.innerText;
+
+  var temp="";
+  temp = tv1;
+  tv1 = tv2;
+  tv2 = temp;
+
+  t1.innerHTML = tv1;
+  t2.innerHTML = tv2;
+  //console.log(t1.innerText);
+}
+
+const amount = 0.5;
+const a1 = document.getElementById("t1");
+const ab = document.getElementById("test");
+ab.innerHTML = t1.innerText;
+console.log("hello: " + tv1);
+const f_url = `http://localhost:3232/convert/${amount}/${symbol}/${convert}`;
+
+function convert() {
+  fetch(f_url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+
+    })
+    .catch(function(error) {
+            console.log(error);
+    });
+}
