@@ -36,39 +36,76 @@ const con = document.getElementById("con");
 const t1 = document.getElementById("txt1");
 const t2 = document.getElementById("txt2");
 
-var tv1 = "";
-var tv2 = "";
+//var tv1 = "";
+//var tv2 = "";
+
+//function swap() {
+//  tv1 = t1.innerText;
+//  tv2 = t2.innerText;
+//
+//  var temp="";
+//  temp = tv1;
+//  tv1 = tv2;
+//  tv2 = temp;
+//
+//  t1.innerHTML = tv1;
+//  t2.innerHTML = tv2;
+//
+//  var amount = 0.5;
+//  var symbol = t1.innerText;
+//  var convert = t2.innerText;
+//
+//  var fetch_url = `http://localhost:3232/convert/${amount}/${symbol}/${convert}`;
+//
+//  const myButton = document.getElementById("conv");
+//  myButton.addEventListener("click", () => {
+//        fetch(fetch_url)
+//          .then((response) => {
+//            return response.json();
+//          })
+//          .then((data) => {
+//             document.getElementById("test").innerHTML = data;
+//          })
+//          .catch(function(error) {
+//                  console.log(error);
+//          });
+//  });
+//
+//}
+
+
+document.getElementById("convert_action").addEventListener("click", () => {
+const amount = amo.value;
+
+//const symbol = sym.value;
+//const convert = con.value;
+const symbol = sym.innerText;
+const convert = con.innerText;
+
+const fetch_url = `http://localhost:3232/convert/${amount}/${symbol}/${convert}`;
+    fetch(fetch_url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.conv);
+        document.getElementById("test").innerHTML = data.conv;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+})
+
 
 function swap() {
-  tv1 = t1.innerText;
-  tv2 = t2.innerText;
+  var v1 = document.getElementById("sym").innerText;
+  var v2 = document.getElementById("con").innerText;
 
-  var temp="";
-  temp = tv1;
-  tv1 = tv2;
-  tv2 = temp;
+  var temp = "";
+  temp = v1;
+  v1 = v2;
+  v2 = temp;
 
-  t1.innerHTML = tv1;
-  t2.innerHTML = tv2;
-  //console.log(t1.innerText);
-}
-
-const amount = 0.5;
-const a1 = document.getElementById("t1");
-const ab = document.getElementById("test");
-ab.innerHTML = t1.innerText;
-console.log("hello: " + tv1);
-const f_url = `http://localhost:3232/convert/${amount}/${symbol}/${convert}`;
-
-function convert() {
-  fetch(f_url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-
-    })
-    .catch(function(error) {
-            console.log(error);
-    });
+  sym.innerHTML = v1;
+  con.innerHTML = v2;
 }

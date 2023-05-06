@@ -129,23 +129,33 @@
               <label>amount</label>
               <input type="text" class="form-control" style="width: 75px" id="amo" name="p_name" />
             </div>
-            <div class="form-group">
-              <label>symbol</label>
-              <input type="text" class="form-control" style="width: 75px" id="sym" name="p_name" />
-            </div>
-            <div class="form-group">
-              <label>convert</label>
-              <input type="text" class="form-control" style="width: 75px" id="con" name="p_name" />
-            </div>
+            <p id="sym" th:text="${pr.p_ticker}"></p>
+            <p id="con">USD</p>
+<!--            <div class="form-group">-->
+<!--              <label>symbol</label>-->
+<!--              <input type="text" class="form-control" readonly style="width: 75px" id="sym" name="p_name" />-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--              <label>convert</label>-->
+<!--              <input type="text" class="form-control" style="width: 75px" id="con" name="p_name" />-->
+<!--            </div>-->
+
+<!--        <p id="amo">1.5</p>-->
+<!--            <input type="number" id="amo">-->
+<!--            <p id="sym" th:text="${pr.p_ticker}"></p>-->
+<!--            <p id="con">USD</p>-->
+            <button onclick="swap()">swapping</button>
+            <button id="convert_action">action</button>
           </div>
 
-          <div>
-            <p id="txt1">a</p>
-            <p id="txt2">b</p>
+<!--          <div>-->
+<!--            <p id="txt1">a</p>-->
+<!--            <p id="txt2">b</p>-->
 
-            <button onclick="swap()">swap</button>
+<!--            <button onclick="swap()">swap</button>-->
             <p id="test">test</p>
-          </div>
+<!--            <button id="conv">convert</button>-->
+<!--          </div>-->
         </div>
       </div>
 
