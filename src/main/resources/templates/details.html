@@ -424,10 +424,42 @@
   <p id="my-paragraph-pos">pos income.</p>
   <p id="my-paragraph-mn">mn income</p>
 
+  <h3>React Rendering</h3>
+<!--  <div id="root" th:attr="data-th-react-root"></div>-->
+  <div id="root" th:fragment="react"></div>
+
 
 
 </div>
+<!--React importing to this page-->
+<!--<script type="text/javascript" src="/js/with-react.js"></script>-->
+<!--<script th:inline="javascript">-->
+<!--  const App = () => {-->
+<!--    return (-->
+<!--      <div>-->
+<!--        <h1>Hello, World!</h1>-->
+<!--      </div>-->
+<!--    );-->
+<!--  };-->
 
+<!--  ReactDOM.render(<App />, document.getElementById('root'));-->
+<!--</script>-->
+<script type="text/babel">
+        function Greeting(props) {
+            return <h1>Hello, {props.name}!</h1>;
+        }
+
+        ReactDOM.render(
+            <Greeting name="World" />,
+            document.getElementById('root')
+        );
+    </script>
+
+<script src="/webjars/react/17.0.2/umd/react.development.js"></script>
+<script src="/webjars/react-dom/17.0.2/umd/react-dom.development.js"></script>
+<script src="/webjars/babel-standalone/6.26.0/babel.min.js"></script>
+
+<!------------------------->
 <script type="text/javascript" th:src="@{/js/show-hide.js}"></script>
 
 <script src="https://unpkg.com/lightweight-charts@3.4.0/dist/lightweight-charts.standalone.production.js"></script>

@@ -20,6 +20,12 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    // react-component.html
+    @GetMapping("/react-component")
+    public String ReactCom(Model model) {
+        return "react-component";
+    }
+
     // chart
     @GetMapping("/check-chart")
     public String checkChart() {

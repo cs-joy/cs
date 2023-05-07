@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>React+Thymeleaf</title>
+</head>
+<body>
+
+<div id="root"></div>
+<div id="tes"></div>
+<div id="check"></div>
+
+<script type="text/babel" th:src="@{/js/react/components/Function.js}"></script>
+<script type="text/babel" th:src="@{/js/react/components/Button.js}"></script>
+
+<script type="text/babel" th:src="@{/js/with-react.js}"></script>
+
+<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+<!--react production branch-->
+<script th:src="@{/webjars/react/16.5.2/umd/react.production.min.js}"></script>
+<!--react development branch-->
+<!--<script th:src="@{/webjars/react/16.5.2/umd/react.development.js}"></script>-->
+<!--react-dom production branch-->
+<script th:src="@{/webjars/react-dom/16.5.2/umd/react-dom.production.min.js}"></script>
+<!--react-dom development branch-->
+<!--<script th:src="@{/webjars/react-dom/16.5.2/umd/react-dom.development.js}"></script>-->
+<script th:src="@{/webjars/babel-standalone/6.26.0/babel.min.js}"></script>
+</body>
+</html>
