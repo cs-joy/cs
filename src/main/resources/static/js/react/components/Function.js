@@ -1,5 +1,4 @@
 
-
 class Test extends React.Component {
   render() {
     const myProfile = {
@@ -11,6 +10,7 @@ class Test extends React.Component {
         return (
           <div>
             <h3>{myProfile.name}</h3>
+            <h5>{myProfile.position}</h5>
           </div>
         );
     }
