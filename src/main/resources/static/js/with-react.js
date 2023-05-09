@@ -1,26 +1,12 @@
-//    class MyComponent extends React.Component {
-//        render() {
-//            return (
-//                <div>
-//                    <h1>Hello, {this.props.name}!</h1>
-//                    <p>This is a React component rendered in a Thymeleaf HTML file in a Spring Boot application.</p>
-//                </div>
-//            );
-//        }
-//    }
-//
-//    ReactDOM.render(<MyComponent name="React" />, document.getElementById('root'));
+class Swap extends React.Component {
+    render() {
 
-
-    class MyComponent extends React.Component {
-        render() {
-            return (
-                <div>
-                    <h1>Hello, {this.props.name}!</h1>
-                    <p>AJ</p>
-                </div>
-            );
-        }
+        return (
+            <div>
+                <h4>swapping</h4>
+            </div>
+        );
     }
+}
 
-    ReactDOM.render(<MyComponent name="React" />, document.getElementById('root'));
+ReactDOM.render(<Swap />, document.getElementById("root"));
