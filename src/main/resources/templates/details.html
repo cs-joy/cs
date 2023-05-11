@@ -145,7 +145,7 @@
 <!--            <p id="sym" th:text="${pr.p_ticker}"></p>-->
 <!--            <p id="con">USD</p>-->
             <button onclick="swap()">swapping</button>
-            <button id="convert_action">action</button>
+            <button id="convert_action">convert</button>
           </div>
 
 <!--          <div>-->
@@ -153,7 +153,7 @@
 <!--            <p id="txt2">b</p>-->
 
 <!--            <button onclick="swap()">swap</button>-->
-            <p id="test">test</p>
+            <p id="test">$0</p>
 <!--            <button id="conv">convert</button>-->
 <!--          </div>-->
         </div>
@@ -430,17 +430,20 @@
 
   <div>
     <h3>swap</h3>
-      <label for="input2">Amount:</label>
-      <input type="text" id="s-amount">
       <label for="input1">Symbol:</label>
       <input type="text" id="input1" th:value="${pr.p_ticker}" readonly>
+      <div>
+        <label>Amount:</label>
+        <input type="text" placeholder="0" id="amot" />
+      </div>
       <br>
       <label for="input2">Convert:</label>
       <input type="text" id="input2" value="USD" readonly>
-      <label for="input2">Amount:</label>
-      <input type="text" id="c-amount">
+      <label for="camount">Amount:</label>
+      <input type="number" placeholder="0" id="camount">
       <br>
       <button id="swapButton">Swap Values</button>
+      <button id="convertButton">Convert</button>
 
   </div>
 

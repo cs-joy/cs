@@ -20,6 +20,13 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+
+    // Page for design lab
+    @GetMapping("/gui-development")
+    public String GUI() {
+        return "ui-design-lab";
+    }
+
     // react-component.html
     @GetMapping("/react-component")
     public String ReactCom(Model model) {
