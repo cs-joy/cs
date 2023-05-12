@@ -3,10 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <title>UI Design Lab</title>
+
+  <style>
+    .b {
+          margin: 0px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border: 1px solid rgb(239, 242, 245);
+    }
+    .b > img {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    }
+    .left_side {
+    box-sizing: border-box;
+    margin: 0px;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    padding: 20px 24px;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-align: center;
+    align-items: center;
+    }
+    .right_side {
+    box-sizing: border-box;
+    margin: 0px;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    padding: 20px 24px;
+    background-color: rgb(248, 250, 253);
+    -webkit-box-align: center;
+    align-items: center;
+    }
+    .box_right_position {
+    box-sizing: border-box;
+    margin: 0px;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    color: rgb(34, 37, 49);
+    }
+    .project_logo {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    margin-inline-end: 12px;
+    }
+    .box_text_part {
+    box-sizing: border-box;
+    margin: 0px;
+    }
+    .converter_p_ticker {
+    line-height: 1.5;
+    margin: 0px;
+    color: rgb(88, 102, 126);
+    font-size: 11px;
+    }
+    .converter_p_name {
+    line-height: 1.5;
+    margin: 0px;
+    color: rgb(34, 37, 49);
+    font-size: 14px;
+    font-weight: 500;
+    }
+    .convert_part {
+    box-sizing: border-box;
+    margin: 0px 0px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    }
+  </style>
 </head>
 <body>
 
-<div id="gui"></div>
+<div class="converter_section">
+  <h3>BTC To USD Converter</h3>
+  <div class="convert_part">
+    <section>
+      <div class="a">
+        <div class="b">
+          <div class="left_side">
+            <img class="project_logo" id="logo1" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" />
+            <div class="box_text_part">
+              <p class="converter_p_ticker" id="ticker1">BTC</p>
+              <p class="converter_p_name" id="name1">Bitcoin</p>
+            </div>
+            <div class="box_right_position">
+              <input class="box_input" placeholder="0" id="amount" pattern="/^-?d+.?d*?/" type="text" />
+            </div>
+          </div>
+          <div class="right_side">
+            <img class="project_logo" id="logo2" src="https://s2.coinmarketcap.com/static/cloud/img/fiat-flags/USD.svg" />
+            <div class="box_text_part">
+              <p class="converter_p_ticker" id="ticker2">USD</p>
+              <p class="converter_p_name" id="name2">United States Dollar</p>
+            </div>
+            <div class="box_right_position">
+              <input class="box_input" placeholder="0" id="result" pattern="/^-?d+.?d*?/" type="text" />
+            </div>
+          </div>
+          <img src="https://s2.coinmarketcap.com/static/cloud/img/converter.png?_=944e242" onclick="swapping()" />
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <button id="converting">Convert</button>
+  </div>
+</div>
+<script type="text/javascript" src="/js/uds.js"></script>
+<!--<div id="gui"></div>-->
 
 
 <script type="text/babel" th:src="@{/js/react/components/UserInterface.js}"></script>

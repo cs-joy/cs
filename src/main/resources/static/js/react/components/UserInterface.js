@@ -67,7 +67,7 @@ class Nav extends React.Component {
                     </li>
                     <li style={listItemStyles}>XRP</li>
                     <li style={listItemStyles}>
-                      <input type="text" />
+                      <input type="text"  class="form-control" />
                     </li>
                     <li style={listItemStyles}>USD</li>
                   </ul>
