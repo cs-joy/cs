@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/details.css}" />
   <link rel="stylesheet" type="text/css" media="all" href="/css/design.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/css/swap.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,36 +125,36 @@
             <a href="#" style="color: #dd4814">CREX24</a>
           </li>
 
-          <div>
-            <div class="form-group">
-              <label>amount</label>
-              <input type="text" class="form-control" style="width: 75px" id="amo" name="p_name" />
-            </div>
-            <p id="sym" th:text="${pr.p_ticker}"></p>
-            <p id="con">USD</p>
+<!--          <div>-->
 <!--            <div class="form-group">-->
-<!--              <label>symbol</label>-->
-<!--              <input type="text" class="form-control" readonly style="width: 75px" id="sym" name="p_name" />-->
+<!--              <label>amount</label>-->
+<!--              <input type="text" class="form-control" style="width: 75px" id="amo" name="p_name" />-->
 <!--            </div>-->
-<!--            <div class="form-group">-->
-<!--              <label>convert</label>-->
-<!--              <input type="text" class="form-control" style="width: 75px" id="con" name="p_name" />-->
-<!--            </div>-->
-
-<!--        <p id="amo">1.5</p>-->
-<!--            <input type="number" id="amo">-->
 <!--            <p id="sym" th:text="${pr.p_ticker}"></p>-->
 <!--            <p id="con">USD</p>-->
-            <button onclick="swap()">swapping</button>
-            <button id="convert_action">convert</button>
-          </div>
+<!--&lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;              <label>symbol</label>&ndash;&gt;-->
+<!--&lt;!&ndash;              <input type="text" class="form-control" readonly style="width: 75px" id="sym" name="p_name" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;              <label>convert</label>&ndash;&gt;-->
+<!--&lt;!&ndash;              <input type="text" class="form-control" style="width: 75px" id="con" name="p_name" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <p id="amo">1.5</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="number" id="amo">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p id="sym" th:text="${pr.p_ticker}"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p id="con">USD</p>&ndash;&gt;-->
+<!--            <button onclick="swap()">swapping</button>-->
+<!--            <button id="convert_action">convert</button>-->
+<!--          </div>-->
 
 <!--          <div>-->
 <!--            <p id="txt1">a</p>-->
 <!--            <p id="txt2">b</p>-->
 
 <!--            <button onclick="swap()">swap</button>-->
-            <p id="test">$0</p>
+<!--            <p id="test">$0</p>-->
 <!--            <button id="conv">convert</button>-->
 <!--          </div>-->
         </div>
@@ -297,7 +298,49 @@
           </div>
           <div class="tv_c" id="tv_chart"></div>
         </div>
+        <!--          -->
+        <div class="converter_section">
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_ticker}" style="margin-right: 8px"></h3>
+            <h3>To USD Converter</h3>
+          </div>
+          <div class="convert_part">
+            <section>
+              <div class="a">
+                <div class="b">
+                  <div class="left_side">
+<!--                    <img class="project_logo" id="logo1" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" />-->
+<!--                    <img class="project_logo" id="logo1" alt="project logo" th:src="*{'data:image/jpeg;base64,' + {pr.p_logo}}" style="width:64px; border-radius:50%; height:64px" />-->
+                    <img class="project_logo" id="logo1" alt="project logo" th:src="${pr.p_logo_url}" />
 
+                    <div class="box_text_part">
+                      <p class="converter_p_ticker" id="ticker1" th:text="${pr.p_ticker}"></p>
+                      <p class="converter_p_name" id="name1" th:text="${pr.p_name}"></p>
+                    </div>
+                    <div class="box_right_position">
+                      <input class="box_input" placeholder="0" id="amount" pattern="/^-?d+.?d*?/" type="text" />
+                    </div>
+                  </div>
+                  <div class="right_side">
+                    <img class="project_logo" id="logo2" src="https://s2.coinmarketcap.com/static/cloud/img/fiat-flags/USD.svg" />
+                    <div class="box_text_part">
+                      <p class="converter_p_ticker" id="ticker2">USD</p>
+                      <p class="converter_p_name" id="name2">United States Dollar</p>
+                    </div>
+                    <div class="box_right_position">
+                      <input class="box_input bia" placeholder="0" id="result" pattern="/^-?d+.?d*?/" type="text" readonly />
+                    </div>
+                  </div>
+                  <img src="https://s2.coinmarketcap.com/static/cloud/img/converter.png?_=944e242" onclick="swapping()" />
+                </div>
+              </div>
+            </section>
+          </div>
+          <div style="justify-content: center; display: flex;">
+            <button id="converting" class="actionBtnDesign">Convert</button>
+          </div>
+        </div>
+        <!--          -->
         <br />
         <div class="blockchain-stats">
           <div style="display: flex;">
@@ -428,32 +471,14 @@
 
   <div id="root"></div>
 
-  <div>
-    <h3>swap</h3>
-      <label for="input1">Symbol:</label>
-      <input type="text" id="input1" th:value="${pr.p_ticker}" readonly>
-      <div>
-        <label>Amount:</label>
-        <input type="text" placeholder="0" id="amot" />
-      </div>
-      <br>
-      <label for="input2">Convert:</label>
-      <input type="text" id="input2" value="USD" readonly>
-      <label for="camount">Amount:</label>
-      <input type="number" placeholder="0" id="camount">
-      <br>
-      <button id="swapButton">Swap Values</button>
-      <button id="convertButton">Convert</button>
-
-  </div>
-
 
 
 </div>
-
+<script type="text/javascript" src="/js/uds.js"></script>
 <script type="text/javascript" th:src="@{/js/swap.js}"></script>
 <!-- file included -->
 <script type="text/babel" th:src="@{/js/with-react.js}"></script>
+<script type="text/babel" th:src="@{/js/components/Button.js}"></script>
 
 <!-- React Dependencies Added -->
 <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>

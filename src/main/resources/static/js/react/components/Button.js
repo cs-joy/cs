@@ -9,13 +9,13 @@
                     border: 'none',
                     cursor: 'pointer'
                 };
-                return <button style={buttonStyle} onClick={onClick}>{label}</button>;
+                return <button style={buttonStyle}>{label}</button>;
             }
         }
 
         ReactDOM.render(
-            <Button label="Click me!" color="#007bff" onClick={() => alert('Button clicked!')} />,
-            document.getElementById('tes')
+            <Button label="Click me!" color="#007bff" />,
+            document.getElementsByClassName('check')
         );
 
 
