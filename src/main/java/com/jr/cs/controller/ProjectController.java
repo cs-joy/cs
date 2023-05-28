@@ -98,6 +98,7 @@ public class ProjectController {
                                 @RequestParam("p_ticker") String p_ticker,
                                 @RequestParam("p_description") String p_description,
                                 @RequestParam("p_website_url") String p_website_url,
+                                @RequestParam("p_twitter_url") String p_twitter_url,
                                 @RequestParam("p_logo_url") String p_logo_url,
                                 @RequestParam("p_logo") MultipartFile file) {
         String logoString = "";
@@ -108,7 +109,7 @@ public class ProjectController {
             e.printStackTrace();
         }
 
-        projectService.addProject(new Project(p_name, p_category, p_ticker, p_description, p_website_url, logoString, p_logo_url));
+        projectService.addProject(new Project(p_name, p_category, p_ticker, p_description, p_website_url, p_twitter_url, logoString, p_logo_url));
         return "redirect:/project-showing";
     }
 

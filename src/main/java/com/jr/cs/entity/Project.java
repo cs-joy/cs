@@ -17,11 +17,14 @@ public class Project {
     private String p_ticker;
 
     // project description
-    @Column(length = 1000)
+    @Column(length = 100)
     private String p_description;
 
     // project website url
     private String p_website_url;
+
+    // project twitter url
+    private String p_twitter_url;
 
     // project logo
     @Lob
@@ -64,6 +67,16 @@ public class Project {
         this.p_logo_url = p_logo_url;
     }
 
+    public Project(String p_name, String p_category, String p_ticker, String p_description, String p_website_url, String p_twitter_url, String p_logo, String p_logo_url) {
+        this.p_name = p_name;
+        this.p_category = p_category;
+        this.p_ticker = p_ticker;
+        this.p_description = p_description;
+        this.p_website_url = p_website_url;
+        this.p_twitter_url = p_twitter_url;
+        this.p_logo = p_logo;
+        this.p_logo_url = p_logo_url;
+    }
     public Long getId() {
         return id;
     }
@@ -126,5 +139,13 @@ public class Project {
 
     public void setP_category(String p_category) {
         this.p_category = p_category;
+    }
+
+    public String getP_twitter_url() {
+        return p_twitter_url;
+    }
+
+    public void setP_twitter_url(String p_twitter_url) {
+        this.p_twitter_url = p_twitter_url;
     }
 }

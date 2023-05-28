@@ -68,7 +68,7 @@
           </li>
           <li>
             <i class="bi bi-twitter" style="margin-right: 3px;"></i>
-            <a href="#" style="color: #dd4814;">Twitter</a>
+            <a th:href="${pr.p_twitter_url}" id="twitter_url" style="color: #dd4814;">Twitter</a>
           </li>
         </div>
         <br>
@@ -161,6 +161,20 @@
       </div>
 
       <div class="col-md-10 col-sm-1" style="max-width: 900px">
+        <!-- About Of the Project -->
+        <div class="project-about">
+          <h4 class="txt-heading">About</h4>
+          <p class="txt-description" th:text="${pr.p_description}" id="txt_clause"></p>
+          <p class="txt-description" id="_clause"></p>
+<!--          <article class="txt-details">-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+<!--            <br />-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+<!--            <br />-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+<!--          </article>-->
+        </div>
+
         <div class="dg">
           <div class="dgWidth" id="dgId">
             <h3 class="h3Text">CryptoSky Platform Ads</h3>
@@ -342,6 +356,9 @@
         </div>
         <!--          -->
         <br />
+
+
+
         <div class="blockchain-stats">
           <div style="display: flex;">
             <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
@@ -363,6 +380,11 @@
             </tr>
           </table>
         </div>
+
+        <div class="twitterIframe">
+          <a class="twitter-timeline" id="updated" th:href="${pr.p_twitter_url}">Tweets by CryptoSky</a>
+        </div>
+
         <div class="wallet-info">
           <div style="display: flex;">
             <h3 style="margin-right: 8px">CS</h3>
@@ -474,6 +496,24 @@
 
 
 </div>
+
+<!--twitter-->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var linkElement = document.getElementById("updated");
+  var attValue = linkElement.getAttribute("href");
+
+  var twitterUrlFromDB = document.getElementById(twitter_url");
+  var val = twitterUrlFromDB.getAttribute("href");
+  var check = "ethereum";
+  var newHrefValue = `${val}?ref_src=twsrc%5Etfw`;
+  linkElement.setAttribute("href", newHrefValue);
+  var attrValue = linkElement.getAttribute("href");
+  console.log(attrValue);
+</script>
+
+<script type="text/javascript" src="/js/txt.js"></script>
+
 <script type="text/javascript" src="/js/uds.js"></script>
 <script type="text/javascript" th:src="@{/js/swap.js}"></script>
 <!-- file included -->
