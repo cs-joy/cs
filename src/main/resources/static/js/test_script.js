@@ -23,6 +23,23 @@ const cmc_url = `http://localhost:3232/test/${project_ticker}/${currency}`;
    return data;
  };
 
+// add comma to string
+function addCommasToString(string) {
+  // convert the string to a number by using the "+" unary operator
+  var number = +string;
+
+  // check if the conversion was successful
+  if (!isNaN(number)) {
+    // convert the number back to a string with commas
+    var stringWithCommas = number.toLocaleString();
+
+    return stringWithCommas;
+  }
+
+  // return the original string if it couldn't be converted to a number
+  return string;
+}
+
 // usd
   fetch(cmc_url)
     .then((response) => {
@@ -30,8 +47,19 @@ const cmc_url = `http://localhost:3232/test/${project_ticker}/${currency}`;
     })
     .then((data) => {
       document.getElementById("price_usd").innerHTML = "$"+data.price;
-      document.getElementById("volume_usd").innerHTML = "$"+data.volume;
-      document.getElementById("marketcap_usd").innerHTML = "$"+data.marketcap;
+      document.getElementById("volume_usd").innerHTML = "$"+addCommasToString(data.volume);
+      document.getElementById("marketcap_usd").innerHTML = "$"+addCommasToString(data.marketcap);
+      document.getElementById("fully_diluted_market_usd").innerHTML = "$"+addCommasToString(data.fully_diluted_market_cap);
+
+      // coin/token (total and circulating) supply
+      document.getElementById("c_supply").innerHTML = addCommasToString(data.cir_supply) + " " + project_ticker_element.textContent;
+      document.getElementById("t_supply").innerHTML = addCommasToString(data.tot_supply)+ " " + project_ticker_element.textContent;
+      //console.log(data.cir_supply);
+
+      // type check of the data
+      //console.log(typeof data.cir_supply);
+      // add comma to string
+      //console.log(addCommasToString(data.cir_supply));
       if (data.percent_change >= 0) {
         document.getElementById("percent_change").style.color = "green";
         document.getElementById("percent_change").innerHTML = data.percent_change+"% ▲";
@@ -52,8 +80,9 @@ const c_cmc_url = `http://localhost:3232/test/${project_ticker}/${b_currency}`;
     })
     .then((data) => {
       document.getElementById("price_btc").innerHTML = data.price + " BTC";
-      document.getElementById("volume_btc").innerHTML = data.volume + " BTC";
-      document.getElementById("marketcap_btc").innerHTML = data.marketcap + " BTC";
+      document.getElementById("volume_btc").innerHTML = addCommasToString(data.volume) + " BTC";
+      document.getElementById("marketcap_btc").innerHTML = addCommasToString(data.marketcap) + " BTC";
+      document.getElementById("fully_diluted_market_btc").innerHTML = addCommasToString(data.fully_diluted_market_cap) + " BTC";
     })
     .catch(function(error) {
         console.log(error);

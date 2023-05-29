@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-md-auto col-sm-12" style="font-size: 15px; max-width: 500px; margin-right: 15px;">
         <div class="project-title" style="display: flex">
-          <h4 th:text="${pr.p_name}" style="margin-right: 3px"></h4>
+          <h4 th:text="${pr.p_name}" id="pr_name" style="margin-right: 3px"></h4>
           <h4>(</h4>
           <h4 th:text="${pr.p_ticker}" id="pr_ticker"></h4>
           <h4>)</h4>
@@ -237,6 +237,7 @@
               <th scope="col">Price</th>
               <th scope="col">Volume</th>
               <th scope="col">Marketcap</th>
+              <th scope="col">Fully Diluted Market Cap</th>
               <th scope="col">Change</th>
             </tr>
             </thead>
@@ -245,12 +246,14 @@
               <td id="price_usd">$0.000</td>
               <td id="volume_usd">$0.000</td>
               <td id="marketcap_usd">$0.000</td>
+              <td id="fully_diluted_market_usd">$0.000</td>
               <td id="percent_change"></td>
             </tr>
             <tr class="table-light">
               <td id="price_btc">0.00000000 BTC</td>
               <td id="volume_btc">0.00000000 BTC</td>
-              <td id="marketcap_btc" colspan="2">0.00000000 BTC</td>
+              <td id="marketcap_btc">0.00000000 BTC</td>
+              <td id="fully_diluted_market_btc" colspan="2">0.00000000 BTC</td>
             </tr>
             </tbody>
           </table>
@@ -281,8 +284,12 @@
               <td>3,854 - <a href="#">status overview</a></td>
             </tr>
             <tr>
-              <td>Supply:</td>
-              <td>11,218,584 DASH</td>
+              <td>Circulating Supply:</td>
+              <td id="c_supply">11,218,584 DASH</td>
+            </tr>
+            <tr>
+              <td>Total Supply:</td>
+              <td id="t_supply">11,218,584 DASH</td>
             </tr>
             <tr>
               <td>Coins locked in masternodes collateral:</td>
@@ -357,7 +364,49 @@
         <!--          -->
         <br />
 
+        <div class="specification">
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>SPECIFICATION</h3>
+          </div>
+          <p>based on actual data over the past 24 hours</p>
+          <table class="table table-striped">
+            <tr>
+              <td>Blocks:</td>
+              <td>551</td>
+            </tr>
+            <tr>
+              <td>AVG block time:</td>
+              <td>2m 36s</td>
+            </tr>
+            <tr>
+              <td>Genesis block:</td>
+              <td>9y 78d 13h 22m 57s ago / Jan 19 2014 03:54:41</td>
+            </tr>
+          </table>
+        </div>
 
+        <div class="tokenomics">
+          <div style="display: flex;">
+            <h3 th:text="${pr.p_name}" style="margin-right: 8px"></h3>
+            <h3>TOKENOMICS</h3>
+          </div>
+          <p>based on actual data over the past 24 hours</p>
+          <table class="table table-striped">
+            <tr>
+              <td>Blocks:</td>
+              <td>551</td>
+            </tr>
+            <tr>
+              <td>AVG block time:</td>
+              <td>2m 36s</td>
+            </tr>
+            <tr>
+              <td>Genesis block:</td>
+              <td>9y 78d 13h 22m 57s ago / Jan 19 2014 03:54:41</td>
+            </tr>
+          </table>
+        </div>
 
         <div class="blockchain-stats">
           <div style="display: flex;">
@@ -382,7 +431,7 @@
         </div>
 
         <div class="twitterIframe">
-          <a class="twitter-timeline" id="updated" th:href="${pr.p_twitter_url}">Tweets by CryptoSky</a>
+          <a class="twitter-timeline" id="updated" th:href="${pr.p_twitter_url}">Tweets by</a>
         </div>
 
         <div class="wallet-info">
@@ -505,11 +554,12 @@
 
   var twitterUrlFromDB = document.getElementById(twitter_url");
   var val = twitterUrlFromDB.getAttribute("href");
-  var check = "ethereum";
+
   var newHrefValue = `${val}?ref_src=twsrc%5Etfw`;
   linkElement.setAttribute("href", newHrefValue);
   var attrValue = linkElement.getAttribute("href");
-  console.log(attrValue);
+
+  //console.log("attrValue");
 </script>
 
 <script type="text/javascript" src="/js/txt.js"></script>
