@@ -5,5 +5,39 @@
 </head>
 <body>
 <h1 th:text="${mydata}"></h1>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script type="text/javascript">
+async function getLivePrice(coinId) {
+  try {
+<!--    //const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);-->
+    const response = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinId}`);
+    const data = response.data;
+    const price = data[0].ath;
+    console.log(data);
+    console.log(`The current price of ${coinId} is ${price}`);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+// Usage example
+getLivePrice('bitcoin');
+
+</script>
+<script type="text/javascript">
+    async function getl(coinId) {
+      fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinId}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        console.log(data[0].ath);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
+    getl('ethereum');
+</script>
 </body>
 </html>

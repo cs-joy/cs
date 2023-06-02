@@ -46,6 +46,7 @@ function addCommasToString(string) {
       return response.json();
     })
     .then((data) => {
+      document.getElementById("pr_rank").innerHTML = "#"+data.project_rank;
       document.getElementById("price_usd").innerHTML = "$"+data.price;
       document.getElementById("volume_usd").innerHTML = "$"+addCommasToString(data.volume);
       document.getElementById("marketcap_usd").innerHTML = "$"+addCommasToString(data.marketcap);
@@ -55,7 +56,7 @@ function addCommasToString(string) {
       document.getElementById("c_supply").innerHTML = addCommasToString(data.cir_supply) + " " + project_ticker_element.textContent;
       document.getElementById("t_supply").innerHTML = addCommasToString(data.tot_supply)+ " " + project_ticker_element.textContent;
       //console.log(data.cir_supply);
-
+      document.getElementById("market_cap_dominance").innerHTML = data.m_cap_dominance;
       // type check of the data
       //console.log(typeof data.cir_supply);
       // add comma to string
@@ -79,10 +80,13 @@ const c_cmc_url = `http://localhost:3232/test/${project_ticker}/${b_currency}`;
       return response.json();
     })
     .then((data) => {
+      document.getElementById("pr_rank").innerHTML = "#"+data.project_rank;
       document.getElementById("price_btc").innerHTML = data.price + " BTC";
       document.getElementById("volume_btc").innerHTML = addCommasToString(data.volume) + " BTC";
       document.getElementById("marketcap_btc").innerHTML = addCommasToString(data.marketcap) + " BTC";
       document.getElementById("fully_diluted_market_btc").innerHTML = addCommasToString(data.fully_diluted_market_cap) + " BTC";
+
+      document.getElementById("market_cap_dominance").innerHTML = data.m_cap_dominance;
     })
     .catch(function(error) {
         console.log(error);
