@@ -14,8 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.Base64;
 
-//@Controller
-@RestController
+@Controller
+//@RestController
 @RequestMapping("/cs")
 public class ProjectController {
     @Autowired

@@ -10,10 +10,12 @@ window.onload = function() {
  const project_ticker_element = document.getElementById("pr_ticker");
  const project_ticker = project_ticker_element.textContent;
 
-const f_url = `http://localhost:3232/${project_ticker}USDT/1m`;
+//const f_url = `http://localhost:3232/${project_ticker}USDT/1m`;
+const f_url = `https://cs-proxy-server.onrender.com/${project_ticker}USDT/1m`;
 
 const currency = "USD";
-const cmc_url = `http://localhost:3232/test/${project_ticker}/${currency}`;
+//const cmc_url = `http://localhost:3232/test/${project_ticker}/${currency}`;
+const cmc_url = `https://cs-proxy-server.onrender.com/test/${project_ticker}/${currency}`;
 
  const getData = async () => {
    const resp = await fetch(f_url);
@@ -74,7 +76,8 @@ function addCommasToString(string) {
     });
 // btc
 const b_currency = "BTC";
-const c_cmc_url = `http://localhost:3232/test/${project_ticker}/${b_currency}`;
+//const c_cmc_url = `http://localhost:3232/test/${project_ticker}/${b_currency}`;
+const c_cmc_url = `https://cs-proxy-server.onrender.com/test/${project_ticker}/${b_currency}`;
   fetch(c_cmc_url)
     .then((response) => {
       return response.json();
